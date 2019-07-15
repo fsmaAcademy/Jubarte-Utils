@@ -1,4 +1,4 @@
-import { IJubarteKeyboardEvent } from "./IJubarteKeyboardEvent";
+import { IKeyboardEvent } from "./interfaces/IKeyboardEvent";
 import { Regex } from "./Regex";
 
 /**
@@ -6,7 +6,7 @@ import { Regex } from "./Regex";
  * @class JubarteEvent
  * @implements {IJubarteKeyboardEvent}
  */
-export class JubarteEvent implements IJubarteKeyboardEvent {
+export class JubarteEvent implements IKeyboardEvent {
 
   /**
    * Creates an instance of JubarteEvent.
@@ -57,7 +57,6 @@ export class JubarteEvent implements IJubarteKeyboardEvent {
     this.dom.off('input');
     this.dom.on('input', (e: JQuery.KeyDownEvent) => {
       if (Regex.ANY_NUMBER.test(this.dom.val() as string)) {
-        console.log(this.dom.val);
         callback();
       }
     });

@@ -4,7 +4,7 @@
  * @export IJubarteKeyboardEvent
  * @interface IJubarteKeyboardEvent
  */
-export interface IJubarteKeyboardEvent {
+export interface IKeyboardEvent {
   /**
    * Esta classe permite apenas digitos numéricos a partir do DOM selecionado.
    *
@@ -30,5 +30,11 @@ export interface IJubarteKeyboardEvent {
    */
   numberNotAllowed(): void;
 
+  /**
+   * Este eveno prever números digitados em um DOM selecionado e trata o evento com uma callback
+   *
+   * @param {() => void} callback
+   * @memberof IJubarteKeyboardEvent
+   */
   preventNumber(callback: () => void): void;
 }
